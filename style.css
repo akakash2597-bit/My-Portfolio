@@ -130,3 +130,56 @@ button:last-child{
     line-height:1.8;
 
 }
+.skills{
+
+    padding:80px 30px;
+
+    text-align:center;
+
+}
+
+.skills h2{
+
+    font-size:40px;
+
+    margin-bottom:40px;
+
+}
+
+.skills-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.skill-card{
+
+    background:#1e293b;
+
+    color:white;
+
+    padding:20px 40px;
+
+    border-radius:12px;
+
+    font-size:20px;
+
+    transition:0.3s;
+
+    cursor:pointer;
+
+}
+
+.skill-card:hover{
+
+    background:#38bdf8;
+
+    transform:translateY(-8px);
+
+}
