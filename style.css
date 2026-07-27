@@ -101,3 +101,32 @@ button:last-child{
     color:#0f172a;
 
 }
+.about{
+
+    padding:80px 30px;
+
+    text-align:center;
+
+    background:#1e293b;
+
+}
+
+.about h2{
+
+    font-size:40px;
+
+    margin-bottom:25px;
+
+}
+
+.about p{
+
+    max-width:800px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
