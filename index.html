@@ -1,799 +1,379 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO -->
     <meta name="description"
-        content="Akash - AI & Data Science Student Portfolio. Aspiring Data Analyst and Future AI Engineer.">
-
+        content="Akash - AI & Data Science student. Aspiring Data Analyst working with Python, Pandas, SQL and Matplotlib.">
     <meta name="keywords"
-        content="Akash, AI Student, Data Analyst, Python Developer, Machine Learning, Portfolio">
-
+        content="Akash, AI Student, Data Analyst, Python, Pandas, SQL, Machine Learning, Portfolio">
     <meta name="author" content="Akash">
-
-
     <title>Akash | AI & Data Science Portfolio</title>
 
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1320'/%3E%3Ctext x='32' y='44' font-size='36' font-family='Arial' font-weight='700' text-anchor='middle' fill='%2338BDF8'%3EA%3C/text%3E%3C/svg%3E">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-
-    <!-- Icons -->
+    <!-- Fonts + icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <link rel="stylesheet" href="style.css">
 
+    <!-- Apply saved theme before first paint (prevents a flash) -->
+    <script>
+        try {
+            var t = localStorage.getItem("theme");
+            if (t) document.documentElement.setAttribute("data-theme", t);
+            var a = localStorage.getItem("accent");
+            if (a) document.documentElement.style.setProperty("--accent", a);
+        } catch (e) { }
+    </script>
 </head>
-
 
 <body>
 
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <!-- ================= NAVBAR ================= -->
-
 <header>
+    <nav class="navbar" aria-label="Main">
+        <a class="logo" href="#home">Akash<span>.</span></a>
 
-<nav class="navbar">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-
-<div class="logo">
-Akash<span>.</span>
-</div>
-
-
-<ul class="nav-links">
-
-<li><a href="#home">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#skills">Skills</a></li>
-
-<li><a href="#projects">Projects</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-
-<div class="menu-icon">
-<i class="fa-solid fa-bars"></i>
-</div>
-
-
-</nav>
-
-
+        <button class="menu-icon" id="menuBtn" aria-label="Open menu" aria-expanded="false"
+            aria-controls="navLinks">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
 </header>
 
+<!-- ================= THEME DOCK ================= -->
+<div class="theme-dock">
+    <div class="theme-panel" id="themePanel" hidden>
+        <p>Mode</p>
+        <div class="seg">
+            <button type="button" data-mode="dark"><i class="fa-solid fa-moon"></i> Dark</button>
+            <button type="button" data-mode="light"><i class="fa-solid fa-sun"></i> Light</button>
+        </div>
+        <p>Accent colour</p>
+        <div class="swatches">
+            <button type="button" data-accent="#38BDF8" style="--sw:#38BDF8" aria-label="Sky blue"></button>
+            <button type="button" data-accent="#A78BFA" style="--sw:#A78BFA" aria-label="Violet"></button>
+            <button type="button" data-accent="#34D399" style="--sw:#34D399" aria-label="Emerald"></button>
+            <button type="button" data-accent="#FBBF24" style="--sw:#FBBF24" aria-label="Amber"></button>
+            <button type="button" data-accent="#FB7185" style="--sw:#FB7185" aria-label="Rose"></button>
+        </div>
+    </div>
+    <button class="dock-toggle" id="dockBtn" type="button" aria-label="Customise theme" aria-expanded="false"
+        aria-controls="themePanel">
+        <i class="fa-solid fa-palette"></i>
+    </button>
+</div>
 
+<main>
 
-
-
-<!-- ================= HERO SECTION ================= -->
-
-
+<!-- ================= HERO ================= -->
 <section id="home" class="hero">
 
+    <div class="hero-content">
+        <h1>Hi, I'm <span>Akash</span></h1>
+        <h2>AI & Data Science Student</h2>
+        <h3 aria-live="off"><span id="typing">Aspiring Data Analyst</span></h3>
 
-<div class="hero-content">
+        <p>
+            Passionate about solving real-world problems using
+            <strong>Python, SQL, Data Analytics and Artificial Intelligence.</strong>
+        </p>
 
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="resume/Akash_Resume.pdf" class="btn secondary" download="Akash_Resume.pdf">
+                <i class="fa-solid fa-download"></i> Download Resume
+            </a>
+        </div>
 
-<h1>
-Hi, I'm <span>Akash</span>
-</h1>
+        <div class="social-icons">
+            <a href="https://github.com/akakash2597-bit" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ak-akash-085b513a1" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:akakash2597@gmail.com" aria-label="Send an email"><i
+                    class="fa-solid fa-envelope"></i></a>
+        </div>
+    </div>
 
+    <div class="hero-side">
+        <div class="profile-box">
+            <img src="images/profile.jpeg" alt="Portrait of Akash" width="360" height="360">
+        </div>
 
-<h2>
-AI & Data Science Student
-</h2>
-
-
-<h3>
-<span id="typing"></span>
-</h3>
-
-
-<p>
-
-Passionate about solving real-world problems using
-<strong>Python, SQL, Data Analytics and Artificial Intelligence.</strong>
-
-</p>
-
-
-
-<div class="hero-buttons">
-
-
-<a href="#projects" class="btn">
-View Projects
-</a>
-
-
-<a href="resume/Akash_Resume.pdf" 
-class="btn secondary">
-
-Download Resume
-
-</a>
-
-
-</div>
-
-
-
-<div class="social-icons">
-
-
-<a href="#">
-<i class="fa-brands fa-github"></i>
-</a>
-
-
-<a href="#">
-<i class="fa-brands fa-linkedin"></i>
-</a>
-
-
-<a href="#">
-<i class="fa-solid fa-envelope"></i>
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-<div class="profile-box">
-
-<img src="images/profile.png"
-alt="Akash Profile Image">
-
-</div>
-
-
+        <!-- The one memorable element: a notebook-style cell -->
+        <div class="cell" role="group" aria-label="Quick facts about Akash">
+            <div class="cell-bar">
+                <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="fname">akash.py</span>
+            </div>
+<pre><code><span class="k">akash</span> = {
+    <span class="s">"degree"</span>: <span class="s">"B.Tech AI &amp; Data Science"</span>,
+    <span class="s">"stack"</span>:  [<span class="s">"Python"</span>, <span class="s">"SQL"</span>, <span class="s">"Pandas"</span>, <span class="s">"Matplotlib"</span>],
+    <span class="s">"open_to"</span>: <span class="s">"Data Analyst internships"</span>,
+}</code></pre>
+        </div>
+    </div>
 
 </section>
 
-
-
-
-
-
-<!-- Achievement Counter -->
-
-
-<section class="counter-section">
-
-
-<div class="counter">
-
-<h2>8+</h2>
-<p>Projects</p>
-
-</div>
-
-
-<div class="counter">
-
-<h2>15+</h2>
-<p>Skills</p>
-
-</div>
-
-
-
-<div class="counter">
-
-<h2>10+</h2>
-<p>Courses Completed</p>
-
-</div>
-
-
+<!-- Counters (numbers are filled in automatically by script.js) -->
+<section class="counter-section" aria-label="At a glance">
+    <div class="counter"><h2 id="countProjects">0</h2><p>Projects</p></div>
+    <div class="counter"><h2 id="countSkills">0</h2><p>Technical Skills</p></div>
+    <div class="counter"><h2 id="countCerts">0</h2><p>Certifications</p></div>
 </section>
 
-
-
-
-
-
-
-
-
-<!-- ================= ABOUT SECTION ================= -->
-
-
+<!-- ================= ABOUT ================= -->
 <section id="about">
+    <h2 class="section-title">About Me</h2>
 
+    <div class="about-container">
+        <div class="about-image">
+            <img src="images/profile-full.jpeg" alt="Akash" loading="lazy">
+        </div>
 
-<h2 class="section-title">
-About Me
-</h2>
+        <div class="about-text">
+            <h3>AI & Data Science Student</h3>
+            <p>
+                I am a B.Tech Artificial Intelligence and Data Science
+                student at Rajalakshmi Institute of Technology.
+                I am passionate about Data Analytics,
+                Artificial Intelligence and Web Development.
+                My goal is to transform data into meaningful insights
+                and grow from a Data Analyst into an AI Engineer.
+            </p>
 
-
-
-<div class="about-container">
-
-
-
-<div class="about-image">
-
-<img src="images/profile.png"
-alt="Akash">
-
-</div>
-
-
-
-
-<div class="about-text">
-
-
-<h3>
-AI & Data Science Student
-</h3>
-
-
-<p>
-
-I am a B.Tech Artificial Intelligence and Data Science
-student at Rajalakshmi Institute of Technology.
-
-I am passionate about Data Analytics,
-Artificial Intelligence and Web Development.
-
-My goal is to transform data into meaningful insights
-and grow from a Data Analyst into an AI Engineer.
-
-</p>
-
-
-
-<div class="info-card">
-
-
-<p>
-🎓 Degree:
-<br>
-B.Tech Artificial Intelligence and Data Science
-
-</p>
-
-
-<p>
-🏫 College:
-<br>
-Rajalakshmi Institute of Technology
-
-</p>
-
-
-<p>
-📍 Location:
-<br>
-Tamil Nadu, India
-
-</p>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
+            <div class="info-card">
+                <p>🎓 Degree:<br>B.Tech Artificial Intelligence and Data Science</p>
+                <p>🏫 College:<br>Rajalakshmi Institute of Technology</p>
+                <p>📍 Location:<br>Tamil Nadu, India</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-<!-- ================= SKILLS SECTION ================= -->
-
+<!-- ================= SKILLS ================= -->
 <section id="skills">
+    <h2 class="section-title">Skills</h2>
 
+    <div class="skills-container">
+        <div class="skill-card">
+            <h3>Programming</h3>
+            <span>Python</span><span>SQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
 
-<h2 class="section-title">
-Skills
-</h2>
+        <div class="skill-card">
+            <h3>Data Analytics</h3>
+            <span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Jupyter Notebook</span>
+            <span>Excel</span><span>Google Sheets</span><span>Google Forms</span>
+        </div>
 
+        <div class="skill-card">
+            <h3>AI & Machine Learning</h3>
+            <span>Prompt Engineering</span><span>Machine Learning</span><span>Deep Learning</span>
+        </div>
 
+        <div class="skill-card">
+            <h3>Tools</h3>
+            <span>Git</span><span>GitHub</span><span>VS Code</span><span>Canva</span><span>MS Office</span>
+        </div>
 
-<div class="skills-container">
-
-
-<div class="skill-card">
-
-<h3>
-Programming
-</h3>
-
-<span>Python</span>
-<span>SQL</span>
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-
-
-</div>
-
-
-
-
-
-<div class="skill-card">
-
-<h3>
-Data Analytics
-</h3>
-
-<span>Excel</span>
-<span>Google Sheets</span>
-<span>Google Forms</span>
-<span>Pandas</span>
-<span>NumPy</span>
-
-</div>
-
-
-
-
-
-
-<div class="skill-card">
-
-<h3>
-AI & Machine Learning
-</h3>
-
-<span>Prompt Engineering</span>
-<span>Machine Learning</span>
-<span>Deep Learning</span>
-
-
-</div>
-
-
-
-
-
-
-<div class="skill-card">
-
-
-<h3>
-Tools
-</h3>
-
-
-<span>Git</span>
-<span>GitHub</span>
-<span>VS Code</span>
-<span>Canva</span>
-<span>MS Office</span>
-
-
-</div>
-
-
-
-
-
-
-<div class="skill-card">
-
-
-<h3>
-Soft Skills
-</h3>
-
-
-<span>Communication</span>
-<span>Leadership</span>
-<span>Teamwork</span>
-<span>Problem Solving</span>
-<span>Critical Thinking</span>
-
-
-</div>
-
-
-
-</div>
-
-
+        <div class="skill-card soft">
+            <h3>Soft Skills</h3>
+            <span>Communication</span><span>Leadership</span><span>Teamwork</span>
+            <span>Problem Solving</span><span>Critical Thinking</span>
+        </div>
+    </div>
 </section>
 
-
-
-
-
-
-
-
-
-<!-- ================= PROJECTS SECTION ================= -->
-
-
+<!-- ================= PROJECTS (cards are built from the list in script.js) ================= -->
 <section id="projects">
-
-
-<h2 class="section-title">
-Featured Projects
-</h2>
-
-
-
-<div class="project-container">
-
-
-
-<div class="project-card">
-
-<img src="images/cutoff.png"
-alt="Cutoff Calculator">
-
-
-<h3>
-Tamil Nadu Cutoff Calculator
-</h3>
-
-
-<p>
-
-A web application that calculates Tamil Nadu
-engineering cutoff marks with a simple interface.
-
-</p>
-
-
-<div class="tech">
-
-HTML
-CSS
-JavaScript
-
-</div>
-
-
-<a href="#">
-Live Demo
-</a>
-
-<a href="#">
-GitHub
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="project-card">
-
-
-<img src="images/portfolio.png"
-alt="Portfolio">
-
-
-<h3>
-Professional Portfolio Website
-</h3>
-
-
-<p>
-
-Responsive personal portfolio website with
-animations and dark mode.
-
-</p>
-
-
-<div class="tech">
-
-HTML
-CSS
-JavaScript
-Git
-
-</div>
-
-
-<a href="#">
-Live Demo
-</a>
-
-
-<a href="#">
-GitHub
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="project-card">
-
-
-<img src="images/nutrition.png"
-alt="Nutrition Calculator">
-
-
-<h3>
-Nutrition Calculator
-</h3>
-
-
-<p>
-
-Calculates daily nutrition requirements
-based on user details.
-
-</p>
-
-
-<div class="tech">
-
-HTML
-CSS
-JavaScript
-
-</div>
-
-
-<a href="#">
-Live Demo
-</a>
-
-
-<a href="#">
-GitHub
-</a>
-
-
-</div>
-
-
-
-
-</div>
-
-
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="project-container" id="projectGrid"></div>
 </section>
 
+<!-- ================= CERTIFICATIONS ================= -->
+<section id="certifications">
+    <h2 class="section-title">Certifications</h2>
 
+    <div class="certificate-container">
+        <div class="certificate-card">
+            <h3>Google Forms</h3>
+            <p>Survey creation and data collection</p>
+            <button type="button">View Certificate</button>
+        </div>
+        <div class="certificate-card">
+            <h3>Google Sheets</h3>
+            <p>Spreadsheet management and analysis</p>
+            <button type="button">View Certificate</button>
+        </div>
+        <div class="certificate-card">
+            <h3>Microsoft Excel</h3>
+            <p>Data handling and visualization</p>
+            <button type="button">View Certificate</button>
+        </div>
+        <div class="certificate-card">
+            <h3>SQL Certification</h3>
+            <p>Database management and queries</p>
+            <button type="button">View Certificate</button>
+        </div>
+        <div class="certificate-card">
+            <h3>Git & GitHub</h3>
+            <p>Version control and project hosting</p>
+            <button type="button">View Certificate</button>
+        </div>
+        <div class="certificate-card">
+            <h3>Prompt Engineering</h3>
+            <p>AI interaction and prompt design</p>
+            <button type="button">View Certificate</button>
+        </div>
+    </div>
+</section>
 
+<!-- ================= ACHIEVEMENTS ================= -->
+<section id="achievements">
+    <h2 class="section-title">Achievements</h2>
 
+    <div class="achievement-container">
+        <div class="achievement-card">
+            <i class="fa-solid fa-globe"></i>
+            <h3>Portfolio Published</h3>
+            <p>Created and deployed professional portfolio website.</p>
+        </div>
+        <div class="achievement-card">
+            <i class="fa-brands fa-github"></i>
+            <h3>GitHub Profile Created</h3>
+            <p>Started building coding projects and repositories.</p>
+        </div>
+        <div class="achievement-card">
+            <i class="fa-brands fa-linkedin"></i>
+            <h3>LinkedIn Optimized</h3>
+            <p>Created internship-focused professional profile.</p>
+        </div>
+        <div class="achievement-card">
+            <i class="fa-solid fa-file"></i>
+            <h3>Resume Created</h3>
+            <p>Built an ATS-friendly resume.</p>
+        </div>
+    </div>
+</section>
 
+<!-- ================= CURRENT GOALS ================= -->
+<section id="goals">
+    <h2 class="section-title">Current Goals</h2>
 
+    <div class="goal-container">
+        <div class="goal-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Build Data Analysis Projects</h3>
+            <p>Create 5+ real-world projects.</p>
+        </div>
+        <div class="goal-card">
+            <i class="fa-brands fa-python"></i>
+            <h3>Master Python Data Analysis</h3>
+            <p>Learn Pandas, NumPy and data processing.</p>
+        </div>
+        <div class="goal-card">
+            <i class="fa-solid fa-brain"></i>
+            <h3>Learn Machine Learning</h3>
+            <p>Build AI-based applications.</p>
+        </div>
+        <div class="goal-card">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3>Get Internship Experience</h3>
+            <p>Work on real-world industry projects.</p>
+        </div>
+    </div>
+</section>
 
+<!-- ================= RESUME ================= -->
+<section id="resume">
+    <h2 class="section-title">Resume</h2>
 
-<!-- Remaining sections will continue in Part 1.2 -->
+    <div class="resume-box">
+        <h3>Download My Resume</h3>
+        <p>Updated regularly as I complete new projects and certifications.</p>
+        <a href="resume/Akash_Resume.pdf" class="btn" download="Akash_Resume.pdf">
+            <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+    </div>
+</section>
 
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+    <h2 class="section-title">Contact Me</h2>
 
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Let's Connect</h3>
+            <p><i class="fa-solid fa-envelope"></i>
+                <a href="mailto:akakash2597@gmail.com">akakash2597@gmail.com</a></p>
+            <p><i class="fa-brands fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/ak-akash-085b513a1" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a></p>
+            <p><i class="fa-brands fa-github"></i>
+                <a href="https://github.com/akakash2597-bit" target="_blank"
+                    rel="noopener noreferrer">GitHub</a></p>
+            <p><i class="fa-solid fa-location-dot"></i> Tamil Nadu, India</p>
+            <p><i class="fa-solid fa-circle-check ok"></i> Open to Internship Opportunities</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+            <label for="cName">Your name</label>
+            <input id="cName" name="name" type="text" autocomplete="name" required>
+
+            <label for="cEmail">Your email</label>
+            <input id="cEmail" name="email" type="email" autocomplete="email" required>
+
+            <label for="cSubject">Subject</label>
+            <input id="cSubject" name="subject" type="text" required>
+
+            <label for="cMessage">Message</label>
+            <textarea id="cMessage" name="message" rows="5" required></textarea>
+
+            <!-- spam trap: real people never see or fill this -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+
+            <button type="submit" id="sendBtn">Send Message</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+    </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <h3>Designed & Developed by Akash</h3>
+    <p>Built using HTML • CSS • JavaScript</p>
+    <p>© <span id="year">2026</span> Akash. All Rights Reserved.</p>
+</footer>
 
 <script src="script.js"></script>
-
-
 </body>
 
-</html>
-<!-- ================= CERTIFICATIONS SECTION ================= -->
-
-
-<section id="certifications">
-
-
-<h2 class="section-title">
-Certifications
-</h2>
-
-
-
-<div class="certificate-container">
-
-
-
-<div class="certificate-card">
-
-<h3>
-Google Forms
-</h3>
-
-<p>
-Survey creation and data collection
-</p>
-
-<button>
-View Certificate
-</button>
-
-</div>
-
-
-
-
-
-<div class="certificate-card">
-
-<h3>
-Google Sheets
-</h3>
-
-<p>
-Spreadsheet management and analysis
-</p>
-
-<button>
-View Certificate
-</button>
-
-</div>
-
-
-
-
-
-<div class="certificate-card">
-
-<h3>
-Microsoft Excel
-</h3>
-
-<p>
-Data handling and visualization
-</p>
-
-<button>
-View Certificate
-</button>
-
-</div>
-
-
-
-
-
-
-<div class="certificate-card">
-
-<h3>
-SQL Certification
-</h3>
-
-<p>
-Database management and queries
-</p>
-
-<button>
-View Certificate
-</button>
-
-</div>
-
-
-
-
-
-
-<div class="certificate-card">
-
-<h3>
-Git & GitHub
-</h3>
-
-<p>
-Version control and project hosting
-</p>
-
-<button>
-View Certificate
-</button>
-
-</div>
-
-
-
-
-
-
-<div class="certificate-card">
-
-<h3>
-Prompt Engineering
-</h3>
-
-<p>
-AI interaction and prompt design
-</p>
-
-<button>
-View Certificate
-</button>
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- ================= ACHIEVEMENTS SECTION ================= -->
-
-
-<section id="achievements">
-
-
-<h2 class="section-title">
-Achievements
-</h2>
-
-
-
-
-<div class="achievement-container">
-
-
-<div class="achievement-card">
-
-<i class="fa-solid fa-globe"></i>
-
-<h3>
-Portfolio Published
-</h3>
-
-<p>
-Created and deployed professional portfolio website.
-</p>
-
-</div>
-
-
-
-
-
-<div class="achievement-card">
+</html> class="achievement-card">
 
 
 <i class="fa-brands fa-github"></i>
