@@ -150,7 +150,7 @@ header { position: fixed; top: 0; width: 100%; z-index: 1000; }
 .dots { display: inline-flex; gap: 6px; }
 .dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); display: block; }
 .dots i:first-child { background: var(--accent); }
-.cell pre { padding: 14px 16px; overflow-x: auto; font: 13px/1.7 var(--font-mono); color: var(--text); }
+.cell pre { padding: 14px 16px; white-space: pre-wrap; overflow-wrap: anywhere; font: 13px/1.7 var(--font-mono); color: var(--text); }
 .cell .k { color: var(--accent-text); }
 .cell .s { color: color-mix(in srgb, var(--text) 78%, var(--accent)); }
 
@@ -232,24 +232,20 @@ header { position: fixed; top: 0; width: 100%; z-index: 1000; }
 
 /* ================= CERTIFICATES / ACHIEVEMENTS / GOALS ================= */
 
-.certificate-container, .achievement-container, .goal-container {
+.achievement-container, .goal-container {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;
 }
 
-.certificate-card, .achievement-card, .goal-card {
+.achievement-card, .goal-card {
     background: var(--surface); border: 1px solid var(--line);
     padding: 28px; border-radius: 18px; text-align: center; transition: .25s;
 }
-.certificate-card:hover, .achievement-card:hover, .goal-card:hover { transform: translateY(-6px); border-color: var(--accent); }
+.achievement-card:hover, .goal-card:hover { transform: translateY(-6px); border-color: var(--accent); }
 
-.certificate-card h3, .goal-card h3, .achievement-card h3 { color: var(--accent-text); font-size: 20px; margin-bottom: 8px; }
-.certificate-card p, .goal-card p, .achievement-card p { color: var(--muted); }
+.goal-card h3, .achievement-card h3 { color: var(--accent-text); font-size: 20px; margin-bottom: 8px; }
+.goal-card p, .achievement-card p { color: var(--muted); }
 .achievement-card > i, .goal-card > i { font-size: 30px; color: var(--accent-text); margin-bottom: 14px; }
 
-.certificate-card button {
-    margin-top: 16px; padding: 9px 20px; border-radius: 10px; cursor: pointer;
-    background: var(--accent); color: var(--accent-ink); border: 0; font: 500 14px var(--font-body);
-}
 
 /* ================= RESUME ================= */
 

@@ -77,7 +77,6 @@ $("#projectGrid").innerHTML = projects.map(p => `
 // ---------- Counters (calculated, so they can never be out of date) ----------
 $("#countProjects").textContent = projects.length;
 $("#countSkills").textContent = $$("#skills .skill-card:not(.soft) span").length;
-$("#countCerts").textContent = $$(".certificate-card").length;
 
 // ---------- Typing animation ----------
 const words = [
