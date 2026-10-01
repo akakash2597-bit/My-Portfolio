@@ -1,291 +1,338 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akash | Portfolio</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Akash - AI & Data Science student. Aspiring Data Analyst working with Python, Pandas, SQL and Matplotlib.">
+    <meta name="keywords"
+        content="Akash, AI Student, Data Analyst, Python, Pandas, SQL, Machine Learning, Portfolio">
+    <meta name="author" content="Akash">
+    <title>Akash | AI & Data Science Portfolio</title>
+
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1320'/%3E%3Ctext x='32' y='44' font-size='36' font-family='Arial' font-weight='700' text-anchor='middle' fill='%2338BDF8'%3EA%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts + icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Apply saved theme before first paint (prevents a flash) -->
+    <script>
+        try {
+            var t = localStorage.getItem("theme");
+            if (t) document.documentElement.setAttribute("data-theme", t);
+            var a = localStorage.getItem("accent");
+            if (a) document.documentElement.style.setProperty("--accent", a);
+        } catch (e) { }
+    </script>
 </head>
+
 <body>
 
-    <!-- Navigation Header -->
-    <header>
-        <nav>
-            <a href="#home" class="logo">Akash<span>.</span></a>
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Hi, I'm <span>Akash</span></h1>
-                <h2>AI & Data Science Student</h2>
-                <h3>Aspiring Data Analyst</h3>
+<!-- ================= NAVBAR ================= -->
+<header>
+    <nav class="navbar" aria-label="Main">
+        <a class="logo" href="#home">Akash<span>.</span></a>
 
-                <p>
-                    Passionate about solving real-world problems using
-                    <strong>Python, SQL, Data Analytics, and Artificial Intelligence.</strong>
-                </p>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <button onclick="openResumeModal()" class="btn btn-secondary"><i class="fa-solid fa-eye"></i> View Resume</button>
-                    <a href="Akash_V_Updated_Resume.pdf" download="Akash_V_Resume.pdf" class="btn btn-outline"><i class="fa-solid fa-download"></i> Download</a>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://github.com/akakash2597-bit" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ak-akash-085b513a1" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="mailto:akakash2597@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                </div>
-            </div>
-
-            <div class="hero-image">
-                <img src="profile.jpeg" alt="Portrait of Akash">
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-container">
-                <div class="about-img">
-                    <img src="profile.jpeg" alt="Akash">
-                </div>
-                <div class="about-text">
-                    <h3>AI & Data Science Student</h3>
-                    <p>
-                        I am a B.Tech Artificial Intelligence and Data Science student at Rajalakshmi Institute of Technology. 
-                        I am passionate about Data Analytics, Artificial Intelligence, and Web Development. My goal is to transform 
-                        data into meaningful insights and grow from a Data Analyst into an AI Engineer.
-                    </p>
-                    <div class="about-details">
-                        <p><strong>🎓 Degree:</strong> B.Tech AI & Data Science</p>
-                        <p><strong>🏫 College:</strong> Rajalakshmi Institute of Technology</p>
-                        <p><strong>📍 Location:</strong> Tamil Nadu, India</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Programming</h3>
-                    <div class="tags">
-                        <span>Python</span><span>SQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Data Analytics</h3>
-                    <div class="tags">
-                        <span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Jupyter</span><span>Excel</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>AI & Machine Learning</h3>
-                    <div class="tags">
-                        <span>Prompt Engineering</span><span>Machine Learning</span><span>Deep Learning</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Tools & Soft Skills</h3>
-                    <div class="tags">
-                        <span>Git</span><span>GitHub</span><span>VS Code</span><span>Communication</span><span>Problem Solving</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Netflix Movies & TV Shows Analysis</h3>
-                    <p>Performed Exploratory Data Analysis (EDA) on Netflix catalog data using Python, Pandas, and visualization libraries to analyze content distributions and release trends over time.</p>
-                    <div class="tags">
-                        <span>Python</span><span>Pandas</span><span>Seaborn</span>
-                    </div>
-                    <a href="https://github.com/akakash2597-bit/Netflix-Movies-Analysis" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> View Repository</a>
-                </div>
-                <div class="project-card">
-                    <h3>Amazon Data Analysis</h3>
-                    <p>Cleaned and processed sales/e-commerce dataset using Pandas to evaluate key business metrics, customer rating patterns, and pricing strategies.</p>
-                    <div class="tags">
-                        <span>Python</span><span>Pandas</span><span>EDA</span>
-                    </div>
-                    <a href="https://github.com/akakash2597-bit/Amazon-Data-Analysis" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> View Repository</a>
-                </div>
-                <div class="project-card">
-                    <h3>Uber Data Analysis</h3>
-                    <p>Analyzed ride booking patterns, peak trip hours, and trip distance distributions using Python, Seaborn, and Matplotlib to derive actionable insights.</p>
-                    <div class="tags">
-                        <span>Python</span><span>Matplotlib</span><span>Seaborn</span>
-                    </div>
-                    <a href="https://github.com/akakash2597-bit/Uber-Data-Analysis" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> View Repository</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Achievements Section -->
-        <section id="achievements" class="achievements">
-            <h2 class="section-title">Achievements</h2>
-            <div class="cards-grid">
-                <div class="grid-card">
-                    <i class="fa-solid fa-globe card-icon"></i>
-                    <h3>Portfolio Published</h3>
-                    <p>Created and deployed professional portfolio website hosted on GitHub Pages.</p>
-                </div>
-                <div class="grid-card">
-                    <i class="fa-brands fa-github card-icon"></i>
-                    <h3>GitHub Profile Created</h3>
-                    <p>Started building coding projects and managing version control repositories.</p>
-                </div>
-                <div class="grid-card">
-                    <i class="fa-brands fa-linkedin card-icon"></i>
-                    <h3>LinkedIn Optimized</h3>
-                    <p>Created internship-focused professional profile and continuous learning network.</p>
-                </div>
-                <div class="grid-card">
-                    <i class="fa-solid fa-file-code card-icon"></i>
-                    <h3>Resume Created</h3>
-                    <p>Built an ATS-friendly developer resume highlighting AI and Data projects.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Current Goals Section -->
-        <section id="goals" class="goals">
-            <h2 class="section-title">Current Goals</h2>
-            <div class="cards-grid">
-                <div class="grid-card">
-                    <i class="fa-solid fa-chart-line card-icon"></i>
-                    <h3>Build Data Analysis Projects</h3>
-                    <p>Create 5+ real-world exploratory data analytics projects.</p>
-                </div>
-                <div class="grid-card">
-                    <i class="fa-brands fa-python card-icon"></i>
-                    <h3>Master Python Data Analysis</h3>
-                    <p>Deepen expertise in Pandas, NumPy, and data processing workflows.</p>
-                </div>
-                <div class="grid-card">
-                    <i class="fa-solid fa-brain card-icon"></i>
-                    <h3>Learn Machine Learning</h3>
-                    <p>Build AI-based predictive applications and machine learning models.</p>
-                </div>
-                <div class="grid-card">
-                    <i class="fa-solid fa-briefcase card-icon"></i>
-                    <h3>Get Internship Experience</h3>
-                    <p>Work on real-world industry projects as a Data Analyst or AI intern.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Resume Section -->
-        <section id="resume" class="resume">
-            <h2 class="section-title">Resume</h2>
-            <div class="resume-card">
-                <i class="fa-solid fa-file-pdf resume-icon"></i>
-                <h3>Download My Resume</h3>
-                <p>Updated regularly as I complete new projects and certifications.</p>
-                
-                <div class="resume-actions">
-                    <button onclick="openResumeModal()" class="btn btn-primary">
-                        <i class="fa-solid fa-eye"></i> View Resume
-                    </button>
-                    <a href="Akash_V_Updated_Resume.pdf" download="Akash_V_Resume.pdf" class="btn btn-secondary">
-                        <i class="fa-solid fa-download"></i> Download Resume
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-container">
-                <div class="contact-card">
-                    <h3>Let's Connect</h3>
-                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:akakash2597@gmail.com">akakash2597@gmail.com</a></p>
-                    <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/ak-akash-085b513a1" target="_blank">LinkedIn</a></p>
-                    <p><i class="fa-brands fa-github"></i> <a href="https://github.com/akakash2597-bit" target="_blank">GitHub</a></p>
-                    <p><i class="fa-solid fa-location-dot"></i> Tamil Nadu, India</p>
-                </div>
-
-                <div class="contact-form-card">
-                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
-                        <div class="form-group">
-                            <label for="name">Your name</label>
-                            <input type="text" id="name" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your email</label>
-                            <input type="email" id="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="4" placeholder="Type your message here..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Floating Theme Switcher Button -->
-    <div class="theme-switcher">
-        <button id="themeToggleBtn" aria-label="Select Theme" onclick="toggleThemeMenu()">
-            <i class="fa-solid fa-palette"></i>
+        <button class="menu-icon" id="menuBtn" aria-label="Open menu" aria-expanded="false"
+            aria-controls="navLinks">
+            <i class="fa-solid fa-bars"></i>
         </button>
-        <div id="themeMenu" class="theme-menu">
-            <button onclick="setTheme('default')"><span class="color-dot default"></span> Cyan Dark</button>
-            <button onclick="setTheme('purple')"><span class="color-dot purple"></span> Purple Glow</button>
-            <button onclick="setTheme('emerald')"><span class="color-dot emerald"></span> Emerald AI</button>
+    </nav>
+</header>
+
+<!-- ================= THEME DOCK ================= -->
+<div class="theme-dock">
+    <div class="theme-panel" id="themePanel" hidden>
+        <p>Mode</p>
+        <div class="seg">
+            <button type="button" data-mode="dark"><i class="fa-solid fa-moon"></i> Dark</button>
+            <button type="button" data-mode="light"><i class="fa-solid fa-sun"></i> Light</button>
+        </div>
+        <p>Accent colour</p>
+        <div class="swatches">
+            <button type="button" data-accent="#38BDF8" style="--sw:#38BDF8" aria-label="Sky blue"></button>
+            <button type="button" data-accent="#A78BFA" style="--sw:#A78BFA" aria-label="Violet"></button>
+            <button type="button" data-accent="#34D399" style="--sw:#34D399" aria-label="Emerald"></button>
+            <button type="button" data-accent="#FBBF24" style="--sw:#FBBF24" aria-label="Amber"></button>
+            <button type="button" data-accent="#FB7185" style="--sw:#FB7185" aria-label="Rose"></button>
+        </div>
+    </div>
+    <button class="dock-toggle" id="dockBtn" type="button" aria-label="Customise theme" aria-expanded="false"
+        aria-controls="themePanel">
+        <i class="fa-solid fa-palette"></i>
+    </button>
+</div>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+
+    <div class="hero-content">
+        <h1>Hi, I'm <span>Akash</span></h1>
+        <h2>AI & Data Science Student</h2>
+        <h3 aria-live="off"><span id="typing">Aspiring Data Analyst</span></h3>
+
+        <p>
+            Passionate about solving real-world problems using
+            <strong>Python, SQL, Data Analytics and Artificial Intelligence.</strong>
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="Akash_Resume.pdf/Akash_V_Updated_Resume.pdf" class="btn secondary" download="Akash_Resume.pdf">
+                <i class="fa-solid fa-download"></i> Download Resume
+            </a>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://github.com/akakash2597-bit" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ak-akash-085b513a1" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:akakash2597@gmail.com" aria-label="Send an email"><i
+                    class="fa-solid fa-envelope"></i></a>
         </div>
     </div>
 
-    <!-- Resume Viewer Modal -->
-    <div id="resumeModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Resume Preview</h3>
-                <span class="close-btn" onclick="closeResumeModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <iframe id="resumeViewer" src="Akash_V_Updated_Resume.pdf"></iframe>
-            </div>
-            <div class="modal-footer">
-                <a href="Akash_V_Updated_Resume.pdf" download="Akash_V_Resume.pdf" class="btn btn-primary"><i class="fa-solid fa-download"></i> Download PDF</a>
-                <button onclick="closeResumeModal()" class="btn btn-secondary">Close</button>
+    <div class="hero-side">
+        <div class="profile-box">
+            <img src="profile.jpeg" alt="Portrait of Akash" width="360" height="360">
+        </div>
+</div>
+</section>
+
+<!-- Counters (numbers are filled in automatically by script.js) -->
+<section class="counter-section" aria-label="At a glance">
+    <div class="counter"><h2 id="countProjects">0</h2><p>Projects</p></div>
+    <div class="counter"><h2 id="countSkills">0</h2><p>Technical Skills</p></div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-container">
+        <div class="about-image">
+            <img src="profile.jpeg" alt="Akash" loading="lazy">
+        </div>
+
+        <div class="about-text">
+            <h3>AI & Data Science Student</h3>
+            <p>
+                I am a B.Tech Artificial Intelligence and Data Science
+                student at Rajalakshmi Institute of Technology.
+                I am passionate about Data Analytics,
+                Artificial Intelligence and Web Development.
+                My goal is to transform data into meaningful insights
+                and grow from a Data Analyst into an AI Engineer.
+            </p>
+
+            <div class="info-card">
+                <p>🎓 Degree:<br>B.Tech Artificial Intelligence and Data Science</p>
+                <p>🏫 College:<br>Rajalakshmi Institute of Technology</p>
+                <p>📍 Location:<br>Tamil Nadu, India</p>
             </div>
         </div>
     </div>
+</section>
 
-    <footer>
-        <p>Designed & Developed by Akash</p>
-        <p>© 2026 Akash. All Rights Reserved.</p>
-    </footer>
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
 
-    <script src="script.js"></script>
+    <div class="skills-container">
+        <div class="skill-card">
+            <h3>Programming</h3>
+            <span>Python</span><span>SQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+
+        <div class="skill-card">
+            <h3>Data Analytics</h3>
+            <span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Jupyter Notebook</span>
+            <span>Excel</span><span>Google Sheets</span><span>Google Forms</span>
+        </div>
+
+        <div class="skill-card">
+            <h3>AI & Machine Learning</h3>
+            <span>Prompt Engineering</span><span>Machine Learning</span><span>Deep Learning</span>
+        </div>
+
+        <div class="skill-card">
+            <h3>Tools</h3>
+            <span>Git</span><span>GitHub</span><span>VS Code</span><span>Canva</span><span>MS Office</span>
+        </div>
+
+        <div class="skill-card soft">
+            <h3>Soft Skills</h3>
+            <span>Communication</span><span>Leadership</span><span>Teamwork</span>
+            <span>Problem Solving</span><span>Critical Thinking</span>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PROJECTS (cards are built from the list in script.js) ================= -->
+<section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="project-container" id="projectGrid"></div>
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+<section id="achievements">
+    <h2 class="section-title">Achievements</h2>
+
+    <div class="achievement-container">
+        <div class="achievement-card">
+            <i class="fa-solid fa-globe"></i>
+            <h3>Portfolio Published</h3>
+            <p>Created and deployed professional portfolio website.</p>
+        </div>
+        <div class="achievement-card">
+            <i class="fa-brands fa-github"></i>
+            <h3>GitHub Profile Created</h3>
+            <p>Started building coding projects and repositories.</p>
+        </div>
+        <div class="achievement-card">
+            <i class="fa-brands fa-linkedin"></i>
+            <h3>LinkedIn Optimized</h3>
+            <p>Created internship-focused professional profile.</p>
+        </div>
+        <div class="achievement-card">
+            <i class="fa-solid fa-file"></i>
+            <h3>Resume Created</h3>
+            <p>Built an ATS-friendly resume.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CURRENT GOALS ================= -->
+<section id="goals">
+    <h2 class="section-title">Current Goals</h2>
+
+    <div class="goal-container">
+        <div class="goal-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Build Data Analysis Projects</h3>
+            <p>Create 5+ real-world projects.</p>
+        </div>
+        <div class="goal-card">
+            <i class="fa-brands fa-python"></i>
+            <h3>Master Python Data Analysis</h3>
+            <p>Learn Pandas, NumPy and data processing.</p>
+        </div>
+        <div class="goal-card">
+            <i class="fa-solid fa-brain"></i>
+            <h3>Learn Machine Learning</h3>
+            <p>Build AI-based applications.</p>
+        </div>
+        <div class="goal-card">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3>Get Internship Experience</h3>
+            <p>Work on real-world industry projects.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= RESUME ================= -->
+<section id="resume">
+    <h2 class="section-title">Resume</h2>
+
+    <div class="resume-box">
+        <h3>My Resume</h3>
+        <p>Updated regularly as I complete new projects and certifications.</p>
+
+        <div class="resume-actions">
+            <a href="Akash_Resume.pdf/Akash_V_Updated_Resume.pdf" class="btn" download="Akash_Resume.pdf">
+                <i class="fa-solid fa-download"></i> Download Resume
+            </a>
+            <a href="Akash_Resume.pdf/Akash_V_Updated_Resume.pdf" class="btn secondary" target="_blank"
+                rel="noopener noreferrer">
+                <i class="fa-solid fa-up-right-from-square"></i> Open in New Tab
+            </a>
+        </div>
+
+        <div class="resume-viewer">
+            <object data="Akash_Resume.pdf/Akash_V_Updated_Resume.pdf#view=FitH" type="application/pdf"
+                aria-label="Resume preview">
+                <p class="resume-fallback">Your browser can't show the preview here.
+                    Please use the buttons above to open or download the resume.</p>
+            </object>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Let's Connect</h3>
+            <p><i class="fa-solid fa-envelope"></i>
+                <a href="mailto:akakash2597@gmail.com">akakash2597@gmail.com</a></p>
+            <p><i class="fa-brands fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/ak-akash-085b513a1" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a></p>
+            <p><i class="fa-brands fa-github"></i>
+                <a href="https://github.com/akakash2597-bit" target="_blank"
+                    rel="noopener noreferrer">GitHub</a></p>
+            <p><i class="fa-solid fa-location-dot"></i> Tamil Nadu, India</p>
+            <p><i class="fa-solid fa-circle-check ok"></i> Open to Internship Opportunities</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+            <label for="cName">Your name</label>
+            <input id="cName" name="name" type="text" autocomplete="name" required>
+
+            <label for="cEmail">Your email</label>
+            <input id="cEmail" name="email" type="email" autocomplete="email" required>
+
+            <label for="cSubject">Subject</label>
+            <input id="cSubject" name="subject" type="text" required>
+
+            <label for="cMessage">Message</label>
+            <textarea id="cMessage" name="message" rows="5" required></textarea>
+
+            <!-- spam trap: real people never see or fill this -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+
+            <button type="submit" id="sendBtn">Send Message</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+    </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <h3>Designed & Developed by Akash</h3>
+    <p>Built using HTML • CSS • JavaScript</p>
+    <p>© <span id="year">2026</span> Akash. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
+
 </html>
