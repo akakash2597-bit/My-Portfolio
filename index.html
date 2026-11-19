@@ -120,8 +120,24 @@
         <section id="projects" class="projects">
             <h2 class="section-title">Projects</h2>
 
+            <!-- Project Category Filter Tabs -->
+            <div class="project-filter-tabs">
+                <button class="filter-tab active" data-category="all">
+                    <i class="fa-solid fa-layer-group"></i> All Projects <span class="tab-count">10</span>
+                </button>
+                <button class="filter-tab" data-category="data-analysis">
+                    <i class="fa-solid fa-chart-pie"></i> Data Analysis <span class="tab-count">7</span>
+                </button>
+                <button class="filter-tab" data-category="ml">
+                    <i class="fa-solid fa-brain"></i> Machine Learning (ML) <span class="tab-count">2</span>
+                </button>
+                <button class="filter-tab" data-category="genai">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Pro Prompt AI <span class="tab-count">1</span>
+                </button>
+            </div>
+
             <!-- Data Analysis Projects -->
-            <div class="project-category">
+            <div class="project-category" data-category="data-analysis">
                 <div class="category-subtitle">
                     <i class="fa-solid fa-chart-pie"></i>
                     <h3>Data Analysis Projects</h3>
@@ -170,11 +186,44 @@
                             <a href="https://github.com/akakash2597-bit/Walmart-Sales-Analysis" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> View Repository</a>
                         </div>
                     </div>
+
+                    <div class="project-card">
+                        <h3>Netflix Movies Analysis</h3>
+                        <p>Exploratory Data Analysis (EDA) of Netflix's movie catalog to uncover trends in content growth, regional production, and genre popularity. Visualized movie vs. TV show distribution and maturity ratings to extract strategic content insights.</p>
+                        <div class="tags">
+                            <span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>Jupyter</span><span>EDA</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/akakash2597-bit/Netflix-Movies-Analysis" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> View Repository</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Amazon Sales Data Analysis</h3>
+                        <p>End-to-end e-commerce sales analysis exploring revenue drivers, order trends, and seasonal spikes. Implemented thorough data cleaning and visual exploratory analysis in Python to evaluate product profitability and customer purchasing behavior.</p>
+                        <div class="tags">
+                            <span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>EDA</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/akakash2597-bit/Amazon-Data-Analysis" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> View Repository</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Uber Trip History Analysis</h3>
+                        <p>Data analysis and engineering pipeline examining Uber trip logs to discover urban mobility patterns, trip purpose distributions, and peak travel hours. Analyzed route distances and ride behavior to generate actionable business recommendations.</p>
+                        <div class="tags">
+                            <span>Python</span><span>Pandas</span><span>SQL</span><span>EDA</span><span>Data Visualization</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/akakash2597-bit/Uber_Data_Analysis" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> View Repository</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Machine Learning Projects (ML) -->
-            <div class="project-category">
+            <div class="project-category" data-category="ml">
                 <div class="category-subtitle">
                     <i class="fa-solid fa-brain"></i>
                     <h3>Machine Learning Projects (ML)</h3>
@@ -207,10 +256,10 @@
             </div>
 
             <!-- Generative AI & Prompt Engineering -->
-            <div class="project-category">
+            <div class="project-category" data-category="genai">
                 <div class="category-subtitle">
                     <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <h3>Generative AI &amp; Prompt Engineering</h3>
+                    <h3>Pro Prompt AI &amp; Generative AI</h3>
                 </div>
                 <div class="projects-grid">
                     <div class="project-card">

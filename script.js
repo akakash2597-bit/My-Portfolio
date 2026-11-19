@@ -64,3 +64,29 @@ window.addEventListener('click', (e) => {
         themeMenu.classList.remove('active');
     }
 });
+
+// Project Category Filter Logic
+const filterTabs = document.querySelectorAll('.filter-tab');
+const projectCategories = document.querySelectorAll('.project-category');
+
+if (filterTabs.length > 0 && projectCategories.length > 0) {
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Update active tab button state
+            filterTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const selectedCategory = tab.getAttribute('data-category');
+
+            // Show / hide matching category sections
+            projectCategories.forEach(category => {
+                const categoryType = category.getAttribute('data-category');
+                if (selectedCategory === 'all' || categoryType === selectedCategory) {
+                    category.classList.remove('hidden');
+                } else {
+                    category.classList.add('hidden');
+                }
+            });
+        });
+    });
+}
