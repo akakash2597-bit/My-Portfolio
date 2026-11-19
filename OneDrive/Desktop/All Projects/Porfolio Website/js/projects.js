@@ -4,85 +4,124 @@
  */
 
 const CASE_STUDIES = {
-  'nexus-analytics': {
-    title: 'Nexus Analytics Cloud Platform',
-    category: 'Enterprise Web App',
-    timeline: '4 Months · Lead Frontend Engineer',
-    description: 'A high-frequency observability and real-time streaming telemetry dashboard serving 200k+ active daily metrics.',
-    problem: 'The legacy monitoring console suffered from frequent UI thread lockups during high-frequency telemetry spikes (500+ events/sec), causing canvas lag and degraded Core Web Vitals.',
-    solution: 'Engineered a virtualized streaming chart architecture leveraging OffscreenCanvas, Web Workers for data processing, and custom WebSockets backpressure management. Refactored state management with Zustand slice stores.',
+  'telecom-churn': {
+    title: 'Telecom Customer Churn Analysis',
+    category: 'Data Analysis Projects',
+    timeline: 'Python & Jupyter Notebook',
+    description: 'An in-depth exploratory data analysis and customer retention study identifying the primary behavioral and service drivers behind subscriber attrition in telecom services.',
+    problem: 'Telecom providers face severe recurring revenue loss when subscribers churn unexpectedly, without clear visibility into which contract terms, billing methods, and service bundles present high attrition risk.',
+    solution: 'Engineered an interactive Python data pipeline utilizing Pandas, Matplotlib, and Seaborn. Isolated high-risk customer segments (e.g. month-to-month contracts at 42% churn and electronic check users at 31% churn), formulating data-backed retention strategies.',
     metrics: [
-      { label: 'FPS during heavy streaming', value: '60 FPS stable' },
-      { label: 'Bundle Size Reduction', value: '-48%' },
-      { label: 'Core Web Vitals INP', value: '38ms' }
+      { label: 'Customers Analyzed', value: '7,043' },
+      { label: 'Overall Churn Rate', value: '26.5%' },
+      { label: 'High-Risk Contract Churn', value: '42%' },
+      { label: 'Key Factor Isolated', value: 'Contract & Payment' }
     ],
-    techStack: ['React 18', 'TypeScript', 'D3.js', 'WebSockets', 'Tailwind CSS', 'Vite'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com'
+    techStack: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Jupyter Notebook', 'EDA'],
+    liveUrl: 'https://github.com/akakash2597-bit/Customer_churn_Analysis',
+    githubUrl: 'https://github.com/akakash2597-bit/Customer_churn_Analysis'
   },
-  'aura-design-system': {
-    title: 'Aura Accessible Design System',
-    category: 'Design Systems',
-    timeline: '6 Months · Lead UI Architect',
-    description: 'An enterprise-grade, WCAG 2.2 AAA-compliant multi-brand design system with 45+ headless and styled primitives.',
-    problem: 'Multiple product squads across distributed teams were reinventing form inputs, navigation patterns, and modals, causing inconsistent brand presence and severe accessibility violations.',
-    solution: 'Designed and published an automated npm component library built upon Radix UI primitives and styled with CSS custom variables. Integrated automated axe-core testing in CI and interactive Storybook documentation with zero regressions.',
+  'walmart-sales-python': {
+    title: 'Walmart Sales Analysis (Python & Pandas)',
+    category: 'Data Analysis Projects',
+    timeline: 'Python & Pandas Analytics',
+    description: 'Data-driven analysis of Walmart sales performance uncovering retail trends, holiday demand surges, regional profitability, and customer purchasing behavior across 9,994+ records.',
+    problem: 'Retail managers needed actionable intelligence on whether discount promotions genuinely increased total profitability or caused loss-leader margin erosion across high-volume categories.',
+    solution: 'Processed multi-attribute retail sales data using Python and Pandas. Evaluated sales vs profit trends across product categories, identified top-performing cities (New York, Los Angeles), and pinpointed highest-margin merchandise.',
     metrics: [
-      { label: 'WCAG Accessibility Rating', value: 'AAA 100%' },
-      { label: 'Design-to-Code Delivery', value: '3x Faster' },
-      { label: 'Squad Adoption Rate', value: '100% across 6 apps' }
+      { label: 'Transactions Analyzed', value: '9,994+' },
+      { label: 'Top Margin Category', value: 'Technology' },
+      { label: 'Top Revenue City', value: 'New York' },
+      { label: 'Geographic Scope', value: 'Multi-State' }
     ],
-    techStack: ['TypeScript', 'React', 'Radix UI', 'Storybook', 'Vanilla Extract', 'Jest / Axe'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com'
+    techStack: ['Python', 'Pandas', 'Jupyter Notebook', 'Data Visualization', 'Retail Analytics'],
+    liveUrl: 'https://github.com/akakash2597-bit/Walmart_sales_Analysis',
+    githubUrl: 'https://github.com/akakash2597-bit/Walmart_sales_Analysis'
   },
-  'pulse-commerce': {
-    title: 'Pulse Commerce Storefront',
-    category: 'Headless E-Commerce',
-    timeline: '3 Months · Senior Frontend Dev',
-    description: 'An ultra-fast headless e-commerce experience with sub-second page transitions, dynamic inventory streaming, and localized currencies.',
-    problem: 'Slow initial load times on 4G mobile devices led to a 28% checkout drop-off and poor SEO organic search rankings on product collection pages.',
-    solution: 'Architected on Next.js 14 App Router utilizing Server Components (RSC), Edge caching, partial prerendering, and optimized image delivery with responsive WebP/AVIF formats.',
+  'healthcare-analysis': {
+    title: 'Healthcare Data Analysis',
+    category: 'Data Analysis Projects',
+    timeline: 'Healthcare Analytics & Python',
+    description: 'Evaluated clinical, admission, and billing records across 54,000+ patient encounters to uncover key trends in hospital admissions, chronic disease burdens, and emergency department utilization.',
+    problem: 'Hospitals experience heavy financial risks and emergency room overcrowding due to late-stage chronic disease admissions that could be mitigated through proactive primary care.',
+    solution: 'Analyzed patient demographics, admission types, diagnosis classifications (Arthritis, Diabetes, Hypertension, Cancer), and insurance provider billing. Quantified gaps in preventive healthcare and highlighted key clinical risk drivers.',
     metrics: [
-      { label: 'Google Lighthouse Score', value: '100 / 100' },
-      { label: 'Largest Contentful Paint (LCP)', value: '0.8s' },
-      { label: 'Conversion Rate Lift', value: '+32%' }
+      { label: 'Patient Encounters', value: '54,000+' },
+      { label: 'Emergency Room Rate', value: '74%' },
+      { label: 'Chronic Conditions', value: '4 Key Classes' },
+      { label: 'Insurance Payers', value: '5 Major Providers' }
     ],
-    techStack: ['Next.js 14', 'React Server Components', 'Zustand', 'Stripe API', 'Tailwind CSS'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com'
+    techStack: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Jupyter Notebook', 'Statistical EDA'],
+    liveUrl: 'https://github.com/akakash2597-bit/Healthcare_Data_Analysis',
+    githubUrl: 'https://github.com/akakash2597-bit/Healthcare_Data_Analysis'
   },
-  'devcanvas-studio': {
-    title: 'DevCanvas Web Studio',
-    category: 'Web Application',
-    timeline: '5 Months · Frontend Specialist',
-    description: 'A browser-based node graph editor and workflow visualizer enabling engineers to model microservice topologies interactively.',
-    problem: 'Rendering hundreds of interactive connected nodes with real-time bezier curve dragging caused severe DOM re-layout bottlenecks and battery drain.',
-    solution: 'Implemented a custom 2D Canvas rendering loop with spatial indexing (R-Tree) for fast hit-testing, zoom-to-cursor transformations, and offline auto-save using IndexedDB.',
+  'walmart-sql-powerbi': {
+    title: 'Walmart Sales Analysis — SQL + Power BI',
+    category: 'Data Analysis Projects',
+    timeline: 'SQL & Power BI Dashboard',
+    description: 'An interactive business intelligence and executive reporting system combining structured MySQL queries with an interactive Power BI dashboard for retail performance monitoring.',
+    problem: 'Business stakeholders lacked dynamic visual dashboards to instantly drill down into revenue by department, profit margins by region, and discount impacts without writing raw queries each time.',
+    solution: 'Designed and executed structured MySQL queries (aggregations, window functions, conditional summaries). Exported optimized relational datasets and developed an interactive Power BI dashboard with KPI metric cards, bar charts, and slicers.',
     metrics: [
-      { label: 'Nodes Rendered Smoothly', value: '10,000+' },
-      { label: 'Memory Footprint', value: '< 65MB' },
-      { label: 'Offline Sync Reliability', value: '99.9%' }
+      { label: 'Dashboard Suite', value: 'Power BI Interactive' },
+      { label: 'Query Engine', value: 'MySQL / SQL' },
+      { label: 'KPIs Monitored', value: 'Sales, Profit, Qty, Disc' },
+      { label: 'Decision Speed', value: 'Instant Drill-down' }
     ],
-    techStack: ['React', 'HTML5 Canvas API', 'TypeScript', 'Web Workers', 'IndexedDB'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com'
+    techStack: ['MySQL', 'SQL Queries', 'Power BI', 'Interactive Dashboard', 'Data Modeling', 'DAX'],
+    liveUrl: 'https://github.com/akakash2597-bit/Walmart-Sales-Analysis',
+    githubUrl: 'https://github.com/akakash2597-bit/Walmart-Sales-Analysis'
   },
-  'hyperfetch-lib': {
-    title: 'HyperFetch Client & Cache',
-    category: 'Open Source Tool',
-    timeline: 'Open Source Contribution',
-    description: 'A lightweight (1.8kB gzip), zero-dependency HTTP client with smart deduplication, exponential backoff, and stale-while-revalidate caching.',
-    problem: 'Existing client libraries were either bloated (>25kB) or lacked built-in request deduplication and offline fallback capabilities.',
-    solution: 'Crafted a modern TypeScript library leveraging native Fetch API, AbortController, and BroadcastChannel for seamless cross-tab cache coordination.',
+  'churn-ml-pipeline': {
+    title: 'Customer Churn Prediction — ML Pipeline',
+    category: 'Machine Learning Projects (ML)',
+    timeline: 'End-to-End ML Pipeline & Streamlit',
+    description: 'An end-to-end machine learning pipeline that predicts customer churn risk for a telecom provider. Built on the Telco Churn data structure, it trains an XGBoost classifier and serves real-time predictions with feature importance via Streamlit.',
+    problem: 'Proactive customer retention requires calculating individual churn probabilities with explainable drivers before customers cancel their subscriptions.',
+    solution: 'Engineered an end-to-end Python ML workflow covering data preprocessing, categorical encoding, model training with XGBoost, evaluation metrics (ROC-AUC), and deployed an interactive Streamlit dashboard for real-time customer risk scoring.',
     metrics: [
-      { label: 'Minified & Gzipped Size', value: '1.8 kB' },
-      { label: 'GitHub Stars', value: '1.4k+' },
-      { label: 'Zero Dependencies', value: '100% Pure TS' }
+      { label: 'Model Accuracy', value: '93.2%' },
+      { label: 'Core Classifier', value: 'XGBoost' },
+      { label: 'Inference Time', value: '< 50ms Real-time' },
+      { label: 'Deployment', value: 'GitHub Pages / Streamlit' }
     ],
-    techStack: ['TypeScript', 'Native Fetch', 'BroadcastChannel', 'Vitest', 'Rollup'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com'
+    techStack: ['Python', 'XGBoost', 'Scikit-learn', 'Streamlit', 'ML Pipeline', 'GitHub Pages'],
+    liveUrl: 'https://akakash2597-bit.github.io/Customer-Churn-ML-Pipeline/',
+    githubUrl: 'https://github.com/akakash2597-bit/Customer-Churn-ML-Pipeline'
+  },
+  'local-pdf-rag': {
+    title: 'Gemini RAG Document Q&A Assistant',
+    category: 'Machine Learning Projects (ML)',
+    timeline: 'LangChain, ChromaDB & Gemini API',
+    description: 'An end-to-end local data analysis assistant that extracts, processes, and fragments text from PDF files. Powered by RAG with Google Gemini API to provide accurate, context-aware answers grounded in uploaded documents.',
+    problem: 'Standard foundation models cannot answer detailed domain questions about proprietary PDFs and reports without hallucinating or requiring expensive retraining.',
+    solution: 'Architected a local Retrieval-Augmented Generation (RAG) pipeline utilizing recursive text splitting, embedding creation via Gemini API, fast vector similarity search with ChromaDB, and an interactive Streamlit UI returning answers with exact citations.',
+    metrics: [
+      { label: 'Answer Grounding', value: '100% Document Verified' },
+      { label: 'Vector Index', value: 'ChromaDB' },
+      { label: 'Embeddings & LLM', value: 'Google Gemini' },
+      { label: 'Chunking Strategy', value: '1,000 / 200 Overlap' }
+    ],
+    techStack: ['Python', 'Gemini API', 'LangChain', 'ChromaDB', 'Streamlit', 'RAG Architecture'],
+    liveUrl: 'https://akakash2597-bit.github.io/Local-PDF-RAG-Assistant/',
+    githubUrl: 'https://github.com/akakash2597-bit/Local-PDF-RAG-Assistant'
+  },
+  'pro-prompt-ai': {
+    title: 'Pro Prompt AI — Prompt Engineering Workbench',
+    category: 'Generative AI & Prompt Engineering',
+    timeline: 'Python, Gemini API & Prompt Engineering Suite',
+    description: 'A prompt engineering workbench designed to transform rough, basic user ideas into precision-engineered instructions, structured blueprints, and multi-tier prompt frameworks for LLMs and image models.',
+    problem: 'Everyday AI users receive inconsistent, low-quality responses because writing effective prompts requires specialized knowledge of role framing, tone calibration, constraints, and output schema definitions.',
+    solution: 'Developed an interactive workbench with a structured questionnaire (goal, tone, audience, format, length, constraints) that automatically synthesizes annotated blueprints using professional AI prompting frameworks. Includes Beginner-to-Expert difficulty levels and a strict zero-data-retention policy.',
+    metrics: [
+      { label: 'Framework Stack', value: 'Role, Tone, Specs, Rules' },
+      { label: 'User Skill Tiers', value: '4 Levels (Beginner-Expert)' },
+      { label: 'Privacy Policy', value: 'Zero Data Storage' },
+      { label: 'Live Deployment', value: 'GitHub Pages Hosted' }
+    ],
+    techStack: ['Python', 'Google Gemini API', 'HTML5 / CSS3', 'Prompt Engineering', 'GitHub Pages'],
+    liveUrl: 'https://akakash2597-bit.github.io/Pro_Prompt_AI/',
+    githubUrl: 'https://github.com/akakash2597-bit/Pro_Prompt_AI'
   }
 };
 
@@ -256,13 +295,20 @@ export class ProjectsManager {
 
         <div style="display: flex; gap: var(--space-3); padding-top: var(--space-4); border-top: 1px solid var(--color-border);">
           <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="flex: 1;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
             GitHub Repository
           </a>
-          <a href="${data.liveUrl}" class="btn btn-primary btn-sm" style="flex: 1;" onclick="alert('Demo environment configured for production deployment.'); return false;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live Production Demo
-          </a>
+          ${
+            data.liveUrl && data.liveUrl !== data.githubUrl
+              ? `<a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex: 1;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Launch Live Demo
+                </a>`
+              : `<a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex: 1;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  View Code &amp; Notebook
+                </a>`
+          }
         </div>
       </div>
     `;
